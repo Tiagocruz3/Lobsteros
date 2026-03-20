@@ -13,6 +13,8 @@ export const TAB_GROUPS = [
 
 export type Tab =
   | "agents"
+  | "agentDashboard"
+  | "agentProfiles"
   | "overview"
   | "channels"
   | "instances"
@@ -24,10 +26,25 @@ export type Tab =
   | "chat"
   | "config"
   | "debug"
-  | "logs";
+  | "logs"
+  | "calculator"
+  | "notes"
+  | "files"
+  | "terminal"
+  | "browser"
+  | "music"
+  | "photos"
+  | "weather"
+  | "clock"
+  | "settingsDisplay"
+  | "settingsNetwork"
+  | "settingsPrivacy"
+  | "systemMonitor"; 
 
 const TAB_PATHS: Record<Tab, string> = {
   agents: "/agents",
+  agentDashboard: "/agent-dashboard",
+  agentProfiles: "/agent-profiles",
   overview: "/overview",
   channels: "/channels",
   instances: "/instances",
@@ -40,6 +57,19 @@ const TAB_PATHS: Record<Tab, string> = {
   config: "/config",
   debug: "/debug",
   logs: "/logs",
+  calculator: "/calculator",
+  notes: "/notes",
+  files: "/files",
+  terminal: "/terminal",
+  browser: "/browser",
+  music: "/music",
+  photos: "/photos",
+  weather: "/weather",
+  clock: "/clock",
+  settingsDisplay: "/settings/display",
+  settingsNetwork: "/settings/network",
+  settingsPrivacy: "/settings/privacy",
+  systemMonitor: "/system/monitor",
 };
 
 const PATH_TO_TAB = new Map(Object.entries(TAB_PATHS).map(([tab, path]) => [path, tab as Tab]));
@@ -127,6 +157,10 @@ export function iconForTab(tab: Tab): IconName {
   switch (tab) {
     case "agents":
       return "folder";
+    case "agentDashboard":
+      return "barChart";
+    case "agentProfiles":
+      return "bot";
     case "chat":
       return "messageSquare";
     case "overview":
@@ -151,6 +185,32 @@ export function iconForTab(tab: Tab): IconName {
       return "bug";
     case "logs":
       return "scrollText";
+    case "calculator":
+      return "calculator";
+    case "notes":
+      return "fileEdit";
+    case "files":
+      return "files";
+    case "terminal":
+      return "terminal";
+    case "browser":
+      return "globe";
+    case "music":
+      return "music";
+    case "photos":
+      return "images";
+    case "weather":
+      return "weather";
+    case "clock":
+      return "clock";
+    case "settingsDisplay":
+      return "monitor";
+    case "settingsNetwork":
+      return "network";
+    case "settingsPrivacy":
+      return "shield";
+    case "systemMonitor":
+      return "activity";
     default:
       return "folder";
   }

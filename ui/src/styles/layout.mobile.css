@@ -1,374 +1,263 @@
 /* ===========================================
-   Mobile Layout
+   Lobster OS - Mobile Layout
    =========================================== */
 
-/* Tablet: Horizontal nav */
-@media (max-width: 1100px) {
-  .nav {
-    display: flex;
+@media (max-width: 768px) {
+  /* Desktop area adjustments */
+  .desktop-area {
+    padding: 8px;
+    padding-bottom: calc(var(--taskbar-height) + 8px);
+  }
+
+  /* Desktop icons - horizontal scroll on mobile */
+  .desktop-icons {
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 4px;
-    padding: 10px 14px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-group {
-    display: contents;
-  }
-
-  .nav-group__items {
-    display: contents;
-  }
-
-  .nav-label {
-    display: none;
-  }
-
-  .nav-group--collapsed .nav-group__items {
-    display: contents;
-  }
-
-  .nav-item {
-    padding: 8px 14px;
-    font-size: 13px;
-    border-radius: var(--radius-md);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-}
-
-/* Mobile-specific styles */
-@media (max-width: 600px) {
-  .shell {
-    --shell-pad: 8px;
-    --shell-gap: 8px;
-  }
-
-  /* Topbar */
-  .topbar {
-    padding: 10px 12px;
+    bottom: auto;
+    top: 8px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    padding: 12px;
     gap: 8px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
     align-items: center;
   }
 
-  .brand {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .brand-title {
-    font-size: 14px;
-  }
-
-  .brand-sub {
-    display: none;
-  }
-
-  .topbar-status {
-    gap: 6px;
-    width: auto;
-    flex-wrap: nowrap;
-  }
-
-  .topbar-status .pill {
-    padding: 4px 8px;
-    font-size: 11px;
+  .app-icon {
+    width: 68px;
     gap: 4px;
-  }
-
-  .topbar-status .pill .mono {
-    display: none;
-  }
-
-  .topbar-status .pill span:nth-child(2) {
-    display: none;
-  }
-
-  /* Nav */
-  .nav {
-    padding: 8px 10px;
-    gap: 4px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-group {
-    display: contents;
-  }
-
-  .nav-label {
-    display: none;
-  }
-
-  .nav-item {
-    padding: 6px 10px;
-    font-size: 12px;
-    border-radius: var(--radius-md);
-    white-space: nowrap;
+    padding: 6px;
     flex-shrink: 0;
   }
 
-  /* Content */
-  .content-header {
+  .app-icon__graphic {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .app-icon__graphic::before {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .app-icon__graphic svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .app-icon__label {
+    font-size: 10px;
+  }
+
+  /* Taskbar - more compact */
+  .taskbar {
+    height: 44px;
+    padding: 0 8px;
+  }
+
+  .taskbar-brand {
+    padding: 4px 8px;
+  }
+
+  .taskbar-brand__text {
     display: none;
   }
 
-  .content {
-    padding: 4px 4px 16px;
-    gap: 12px;
+  .taskbar-center {
+    gap: 2px;
   }
 
-  /* Cards */
-  .card {
-    padding: 12px;
-    border-radius: var(--radius-md);
+  .taskbar-app {
+    padding: 4px 8px;
+    min-width: 32px;
   }
 
-  .card-title {
-    font-size: 13px;
+  .taskbar-app__icon {
+    width: 20px;
+    height: 20px;
   }
 
-  /* Stats */
-  .stat-grid {
-    gap: 8px;
-    grid-template-columns: repeat(2, 1fr);
+  .taskbar-app__label {
+    display: none;
   }
 
-  .stat {
-    padding: 10px;
-    border-radius: var(--radius-md);
+  /* System tray - hide some items */
+  .system-tray {
+    padding: 2px 4px;
   }
 
-  .stat-label {
+  .tray-clock {
     font-size: 11px;
+    padding: 2px 4px;
   }
 
-  .stat-value {
+  /* Windows - full screen on mobile */
+  .window {
+    position: fixed !important;
+    inset: 4px !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: var(--radius-lg);
+    resize: none;
+  }
+
+  .window-header {
+    height: 44px;
+    padding: 0 12px;
+  }
+
+  .window-title {
+    font-size: 15px;
+  }
+
+  .window-content {
+    padding: 12px;
+  }
+
+  /* Start menu - full width */
+  .start-menu {
+    left: 8px;
+    right: 8px;
+    width: auto;
+    max-height: calc(100vh - var(--taskbar-height) - 60px);
+  }
+
+  .start-menu__apps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Hide window resize handle on mobile */
+  .window-resize-handle {
+    display: none;
+  }
+
+  /* Adjust window controls for touch */
+  .window-btn {
+    width: 32px;
+    height: 32px;
     font-size: 18px;
   }
 
-  /* Notes */
-  .note-grid {
+  /* Two-pane layout becomes single column */
+  .window-two-pane {
     grid-template-columns: 1fr;
-    gap: 8px;
+    grid-template-rows: auto 1fr;
   }
 
-  /* Forms */
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .field input,
-  .field textarea,
-  .field select {
-    padding: 8px 10px;
-    border-radius: var(--radius-md);
-    font-size: 14px;
-  }
-
-  /* Buttons */
-  .btn {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  /* Pills */
-  .pill {
-    padding: 4px 10px;
-    font-size: 12px;
-  }
-
-  /* Chat */
-  .chat-header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-  }
-
-  .chat-header__left {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .chat-header__right {
-    justify-content: space-between;
-  }
-
-  .chat-session {
-    min-width: unset;
-    width: 100%;
-  }
-
-  .chat-thread {
-    margin-top: 8px;
-    padding: 12px 8px;
-  }
-
-  .chat-msg {
-    max-width: 90%;
-  }
-
-  .chat-bubble {
-    padding: 8px 12px;
-    border-radius: var(--radius-md);
-  }
-
-  .chat-compose {
-    gap: 8px;
-  }
-
-  .chat-compose__field textarea {
-    min-height: 60px;
-    padding: 8px 10px;
-    border-radius: var(--radius-md);
-    font-size: 14px;
-  }
-
-  /* Log stream */
-  .log-stream {
-    border-radius: var(--radius-md);
-    max-height: 380px;
-  }
-
-  .log-row {
-    grid-template-columns: 1fr;
-    gap: 4px;
-    padding: 8px;
-  }
-
-  .log-time {
-    font-size: 10px;
-  }
-
-  .log-level {
-    font-size: 9px;
-  }
-
-  .log-subsystem {
-    font-size: 11px;
-  }
-
-  .log-message {
-    font-size: 12px;
-  }
-
-  /* Lists */
-  .list-item {
-    padding: 10px;
-    border-radius: var(--radius-md);
-  }
-
-  .list-title {
-    font-size: 13px;
-  }
-
-  .list-sub {
-    font-size: 11px;
-  }
-
-  /* Code blocks */
-  .code-block {
-    padding: 8px;
-    border-radius: var(--radius-md);
-    font-size: 11px;
-  }
-
-  /* Theme toggle */
-  .theme-toggle {
-    --theme-item: 24px;
-    --theme-gap: 2px;
-    --theme-pad: 3px;
-  }
-
-  .theme-icon {
-    width: 12px;
-    height: 12px;
+  .window-two-pane__sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    max-height: 200px;
   }
 }
 
-/* Small mobile */
-@media (max-width: 400px) {
-  .shell {
-    --shell-pad: 4px;
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .desktop-icons {
+    grid-template-columns: repeat(auto-fill, 72px);
+    gap: 14px;
   }
 
-  .topbar {
-    padding: 8px 10px;
+  .app-icon {
+    width: 72px;
   }
 
-  .brand-title {
-    font-size: 13px;
+  /* Windows can be smaller on tablet */
+  .window {
+    min-width: 400px;
+  }
+}
+
+/* Landscape phone adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .start-menu {
+    max-height: calc(100vh - var(--taskbar-height) - 20px);
   }
 
-  .nav {
-    padding: 6px 8px;
+  .start-menu__apps {
+    grid-template-columns: repeat(6, 1fr);
   }
 
-  .nav-item {
-    padding: 6px 8px;
-    font-size: 11px;
+  .window-two-pane {
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 1fr;
   }
 
-  .content {
-    padding: 4px 4px 12px;
-    gap: 10px;
+  .window-two-pane__sidebar {
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    max-height: none;
+  }
+}
+
+/* Touch device optimizations */
+@media (pointer: coarse) {
+  .app-icon,
+  .taskbar-app,
+  .start-menu__app {
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .card {
-    padding: 10px;
+  .app-icon:active,
+  .taskbar-app:active,
+  .start-menu__app:active {
+    transform: scale(0.95);
   }
 
-  .stat {
-    padding: 8px;
+  /* Larger touch targets */
+  .window-btn {
+    min-width: 44px;
+    min-height: 44px;
   }
 
-  .stat-value {
-    font-size: 16px;
+  .window-sidebar__item {
+    padding: 12px;
   }
 
-  .chat-bubble {
-    padding: 8px 10px;
+  .window-tab {
+    padding: 14px 20px;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .window {
+    animation: none;
   }
 
-  .chat-compose__field textarea {
-    min-height: 52px;
-    padding: 8px 10px;
-    font-size: 13px;
+  .window.closing {
+    animation: none;
+    opacity: 0;
   }
 
-  .btn {
-    padding: 6px 10px;
-    font-size: 11px;
+  .app-icon:hover,
+  .taskbar-app:hover {
+    transform: none;
   }
 
-  .topbar-status .pill {
-    padding: 3px 6px;
-    font-size: 10px;
+  .start-menu {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --window-border: rgba(255, 42, 42, 0.6);
+    --border-strong: rgba(255, 42, 42, 0.5);
+    --accent: #ff4444;
   }
 
-  .theme-toggle {
-    --theme-item: 22px;
-    --theme-gap: 2px;
-    --theme-pad: 2px;
+  .window.active {
+    border-width: 2px;
   }
 
-  .theme-icon {
-    width: 11px;
-    height: 11px;
+  .app-icon.active,
+  .taskbar-app.active {
+    border-width: 2px;
   }
 }

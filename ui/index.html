@@ -3,14 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenClaw Control</title>
-    <meta name="color-scheme" content="dark light" />
+    <title>Lobster OS</title>
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Lobster OS - A red-themed desktop OS interface for Lobster Gateway" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <style>
+      /* Critical CSS for initial load */
+      body {
+        margin: 0;
+        background: #0a0a0a;
+        color: #e0e0e0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      
+      /* Loading indicator */
+      #loading {
+        position: fixed;
+        inset: 0;
+        background: #0a0a0a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        transition: opacity 0.3s ease;
+      }
+      
+      #loading.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .loading-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 24px;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      
+      .loading-text {
+        font-size: 14px;
+        color: #ff2a2a;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 0.5; transform: scale(0.95); }
+        50% { opacity: 1; transform: scale(1); }
+      }
+    </style>
   </head>
   <body>
-    <openclaw-app></openclaw-app>
+    <!-- Loading Screen -->
+    <div id="loading">
+      <svg class="loading-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Lobster silhouette -->
+        <path d="M50 10 C30 10 20 30 20 45 C20 55 25 65 35 70 C30 75 25 80 25 90 L35 85 C35 85 40 80 45 75 L55 75 C60 80 65 85 65 85 L75 90 C75 80 70 75 65 70 C75 65 80 55 80 45 C80 30 70 10 50 10 Z" 
+              fill="#ff2a2a" opacity="0.9"/>
+        <!-- Claws -->
+        <ellipse cx="15" cy="35" rx="10" ry="15" fill="#ff2a2a" opacity="0.9" transform="rotate(-30 15 35)"/>
+        <ellipse cx="85" cy="35" rx="10" ry="15" fill="#ff2a2a" opacity="0.9" transform="rotate(30 85 35)"/>
+        <!-- Tech ring -->
+        <circle cx="50" cy="50" r="45" stroke="#ff2a2a" stroke-width="1" opacity="0.3" fill="none"/>
+        <circle cx="50" cy="50" r="38" stroke="#ff2a2a" stroke-width="0.5" opacity="0.2" fill="none"/>
+      </svg>
+      <div class="loading-text">Loading Lobster OS...</div>
+    </div>
+    
+    <lobster-app></lobster-app>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      // Hide loading screen when app is ready
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loading = document.getElementById('loading');
+          if (loading) {
+            loading.classList.add('hidden');
+            setTimeout(() => loading.remove(), 300);
+          }
+        }, 500);
+      });
+    </script>
   </body>
 </html>

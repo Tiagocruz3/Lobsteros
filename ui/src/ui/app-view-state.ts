@@ -143,6 +143,7 @@ export type AppViewState = {
   agentIdentityLoading: boolean;
   agentIdentityError: string | null;
   agentIdentityById: Record<string, AgentIdentityResult>;
+  agentProfilesSelectedId: string | null;
   agentSkillsLoading: boolean;
   agentSkillsError: string | null;
   agentSkillsReport: SkillStatusReport | null;

@@ -1,103 +1,134 @@
 :root {
-  /* Background - Warmer dark with depth */
-  --bg: #12141a;
-  --bg-accent: #14161d;
-  --bg-elevated: #1a1d25;
-  --bg-hover: #262a35;
-  --bg-muted: #262a35;
+  /* ===========================================
+     LOBSTER OS - Linux Tech Theme
+     Dark terminal aesthetic with cyber red accents
+     =========================================== */
 
-  /* Card / Surface - More contrast between levels */
-  --card: #181b22;
-  --card-foreground: #f4f4f5;
-  --card-highlight: rgba(255, 255, 255, 0.05);
-  --popover: #181b22;
-  --popover-foreground: #f4f4f5;
+  /* Core Background - Terminal black */
+  --bg: #0c0c0c;
+  --bg-accent: #0f0f0f;
+  --bg-elevated: #141414;
+  --bg-hover: #1a1a1a;
+  --bg-muted: #161616;
+  --bg-desktop: #080808;
+  --bg-terminal: #0d0d0d;
+
+  /* Desktop wallpaper gradient - Linux terminal feel */
+  --desktop-gradient-start: #0a0a0a;
+  --desktop-gradient-end: #1a0a0a;
+
+  /* Window chrome - Linux terminal panels */
+  --window-bg: rgba(16, 16, 16, 0.98);
+  --window-border: rgba(255, 50, 50, 0.25);
+  --window-border-active: rgba(255, 60, 60, 0.6);
+  --window-shadow: 0 8px 32px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 50, 50, 0.15);
+  --window-shadow-active: 0 16px 48px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 60, 60, 0.4), 0 0 40px rgba(255, 50, 50, 0.2);
+  
+  /* Linux terminal colors */
+  --terminal-green: #00ff41;
+  --terminal-red: #ff3333;
+  --terminal-amber: #ffb000;
+  --terminal-cyan: #00d4aa;
+  --terminal-purple: #b347d9;
+
+  /* Card / Surface */
+  --card: #111111;
+  --card-foreground: #f5f5f5;
+  --card-highlight: rgba(255, 255, 255, 0.03);
+  --popover: #0f0f0f;
+  --popover-foreground: #f5f5f5;
 
   /* Panel */
-  --panel: #12141a;
-  --panel-strong: #1a1d25;
-  --panel-hover: #262a35;
-  --chrome: rgba(18, 20, 26, 0.95);
-  --chrome-strong: rgba(18, 20, 26, 0.98);
+  --panel: #0d0d0d;
+  --panel-strong: #111111;
+  --panel-hover: #1a1a1a;
+  --chrome: rgba(10, 10, 10, 0.98);
+  --chrome-strong: rgba(13, 13, 13, 0.99);
 
-  /* Text - Slightly warmer */
-  --text: #e4e4e7;
-  --text-strong: #fafafa;
-  --chat-text: #e4e4e7;
-  --muted: #71717a;
-  --muted-strong: #52525b;
-  --muted-foreground: #71717a;
+  /* Text - Clean white/gray on black */
+  --text: #e0e0e0;
+  --text-strong: #ffffff;
+  --chat-text: #e8e8e8;
+  --muted: #808080;
+  --muted-strong: #606060;
+  --muted-foreground: #707070;
 
-  /* Border - Subtle but defined */
-  --border: #27272a;
-  --border-strong: #3f3f46;
-  --border-hover: #52525b;
-  --input: #27272a;
-  --ring: #ff5c5c;
+  /* Border - Terminal style with red tint */
+  --border: #2a1a1a;
+  --border-strong: #3d2525;
+  --border-hover: #4a3030;
+  --input: #1a1212;
+  --ring: #ff3333;
 
-  /* Accent - Punchy signature red */
-  --accent: #ff5c5c;
-  --accent-hover: #ff7070;
-  --accent-muted: #ff5c5c;
-  --accent-subtle: rgba(255, 92, 92, 0.15);
-  --accent-foreground: #fafafa;
-  --accent-glow: rgba(255, 92, 92, 0.25);
-  --primary: #ff5c5c;
+  /* Accent - Cyber Red */
+  --accent: #ff3333;
+  --accent-hover: #ff4d4d;
+  --accent-muted: #cc2929;
+  --accent-subtle: rgba(255, 51, 51, 0.15);
+  --accent-foreground: #ffffff;
+  --accent-glow: rgba(255, 51, 51, 0.5);
+  --primary: #ff3333;
   --primary-foreground: #ffffff;
+  
+  /* Linux accent variations */
+  --accent-tech: #ff0040;
+  --accent-neon: #ff1a1a;
+  --accent-matrix: #ff3333;
 
-  /* Secondary - Teal accent for variety */
-  --secondary: #1e2028;
-  --secondary-foreground: #f4f4f5;
-  --accent-2: #14b8a6;
-  --accent-2-muted: rgba(20, 184, 166, 0.7);
-  --accent-2-subtle: rgba(20, 184, 166, 0.15);
+  /* Secondary - Dark with red undertone */
+  --secondary: #1a1212;
+  --secondary-foreground: #e0e0e0;
+  --accent-2: #ff5555;
+  --accent-2-muted: rgba(255, 85, 85, 0.7);
+  --accent-2-subtle: rgba(255, 85, 85, 0.15);
 
-  /* Semantic - More saturated */
-  --ok: #22c55e;
-  --ok-muted: rgba(34, 197, 94, 0.75);
-  --ok-subtle: rgba(34, 197, 94, 0.12);
-  --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  --warn: #f59e0b;
-  --warn-muted: rgba(245, 158, 11, 0.75);
-  --warn-subtle: rgba(245, 158, 11, 0.12);
-  --danger: #ef4444;
-  --danger-muted: rgba(239, 68, 68, 0.75);
-  --danger-subtle: rgba(239, 68, 68, 0.12);
-  --info: #3b82f6;
+  /* Semantic - Vibrant colors on dark */
+  --ok: #00d26a;
+  --ok-muted: rgba(0, 210, 106, 0.75);
+  --ok-subtle: rgba(0, 210, 106, 0.12);
+  --destructive: #ff4444;
+  --destructive-foreground: #ffffff;
+  --warn: #ffaa00;
+  --warn-muted: rgba(255, 170, 0, 0.75);
+  --warn-subtle: rgba(255, 170, 0, 0.12);
+  --danger: #ff3333;
+  --danger-muted: rgba(255, 51, 51, 0.75);
+  --danger-subtle: rgba(255, 51, 51, 0.12);
+  --info: #4488ff;
 
-  /* Focus - With glow */
-  --focus: rgba(255, 92, 92, 0.25);
+  /* Focus - Red glow */
+  --focus: rgba(255, 42, 42, 0.3);
   --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--ring);
   --focus-glow: 0 0 0 2px var(--bg), 0 0 0 4px var(--ring), 0 0 20px var(--accent-glow);
 
-  /* Grid */
-  --grid-line: rgba(255, 255, 255, 0.04);
+  /* Grid - Tech pattern */
+  --grid-line: rgba(255, 42, 42, 0.03);
 
   /* Theme transition */
   --theme-switch-x: 50%;
   --theme-switch-y: 50%;
 
-  /* Typography */
-  --mono:
-    "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  /* Typography - Tech style */
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: var(--font-body);
+  --font-tech: "Segoe UI", Roboto, sans-serif;
 
-  /* Shadows - Richer with subtle color */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.03);
-  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.03);
-  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.03);
+  /* Shadows - Deep with red accent */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 42, 42, 0.05);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 42, 42, 0.08);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 42, 42, 0.1);
   --shadow-glow: 0 0 30px var(--accent-glow);
+  --shadow-red: 0 0 20px rgba(255, 42, 42, 0.3);
 
-  /* Radii - Slightly larger for friendlier feel */
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  /* Radii - Slightly sharper for tech feel */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
   --radius-full: 9999px;
-  --radius: 8px;
+  --radius: 6px;
 
   /* Transitions - Snappy but smooth */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -107,83 +138,16 @@
   --duration-normal: 200ms;
   --duration-slow: 350ms;
 
+  /* Taskbar */
+  --taskbar-height: 48px;
+  --taskbar-bg: rgba(10, 10, 10, 0.95);
+  --taskbar-border: rgba(255, 42, 42, 0.2);
+
+  /* Window */
+  --window-header-height: 36px;
+  --window-radius: 8px;
+
   color-scheme: dark;
-}
-
-/* Light theme - Clean with subtle warmth */
-:root[data-theme="light"] {
-  --bg: #fafafa;
-  --bg-accent: #f5f5f5;
-  --bg-elevated: #ffffff;
-  --bg-hover: #f0f0f0;
-  --bg-muted: #f0f0f0;
-  --bg-content: #f5f5f5;
-
-  --card: #ffffff;
-  --card-foreground: #18181b;
-  --card-highlight: rgba(0, 0, 0, 0.03);
-  --popover: #ffffff;
-  --popover-foreground: #18181b;
-
-  --panel: #fafafa;
-  --panel-strong: #f5f5f5;
-  --panel-hover: #ebebeb;
-  --chrome: rgba(250, 250, 250, 0.95);
-  --chrome-strong: rgba(250, 250, 250, 0.98);
-
-  --text: #3f3f46;
-  --text-strong: #18181b;
-  --chat-text: #3f3f46;
-  --muted: #71717a;
-  --muted-strong: #52525b;
-  --muted-foreground: #71717a;
-
-  --border: #e4e4e7;
-  --border-strong: #d4d4d8;
-  --border-hover: #a1a1aa;
-  --input: #e4e4e7;
-
-  --accent: #dc2626;
-  --accent-hover: #ef4444;
-  --accent-muted: #dc2626;
-  --accent-subtle: rgba(220, 38, 38, 0.12);
-  --accent-foreground: #ffffff;
-  --accent-glow: rgba(220, 38, 38, 0.15);
-  --primary: #dc2626;
-  --primary-foreground: #ffffff;
-
-  --secondary: #f4f4f5;
-  --secondary-foreground: #3f3f46;
-  --accent-2: #0d9488;
-  --accent-2-muted: rgba(13, 148, 136, 0.75);
-  --accent-2-subtle: rgba(13, 148, 136, 0.12);
-
-  --ok: #16a34a;
-  --ok-muted: rgba(22, 163, 74, 0.75);
-  --ok-subtle: rgba(22, 163, 74, 0.1);
-  --destructive: #dc2626;
-  --destructive-foreground: #fafafa;
-  --warn: #d97706;
-  --warn-muted: rgba(217, 119, 6, 0.75);
-  --warn-subtle: rgba(217, 119, 6, 0.1);
-  --danger: #dc2626;
-  --danger-muted: rgba(220, 38, 38, 0.75);
-  --danger-subtle: rgba(220, 38, 38, 0.1);
-  --info: #2563eb;
-
-  --focus: rgba(220, 38, 38, 0.2);
-  --focus-glow: 0 0 0 2px var(--bg), 0 0 0 4px var(--ring), 0 0 16px var(--accent-glow);
-
-  --grid-line: rgba(0, 0, 0, 0.05);
-
-  /* Light shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  --shadow-glow: 0 0 24px var(--accent-glow);
-
-  color-scheme: light;
 }
 
 * {
@@ -193,16 +157,90 @@
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
   font: 400 14px/1.55 var(--font-body);
   letter-spacing: -0.02em;
-  background: var(--bg);
+  background: var(--bg-desktop);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+}
+
+/* Prevent cursor changes during drag operations - highest priority */
+body.dragging,
+body.dragging * {
+  cursor: grabbing !important;
+}
+
+/* Ensure all interactive elements have proper cursor */
+button, .button, [role="button"] {
+  cursor: pointer;
+}
+
+/* Override cursor for window content areas */
+.window-content, 
+.window-content *,
+.window {
+  cursor: default;
+}
+
+/* Window header shows default cursor, not move */
+.window-header {
+  cursor: default !important;
+}
+
+.window-header * {
+  cursor: inherit;
+}
+
+/* Desktop Background - Linux Terminal Style */
+.desktop {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 80% 20%, rgba(255, 51, 51, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 0, 64, 0.05) 0%, transparent 40%),
+    linear-gradient(180deg, var(--desktop-gradient-start) 0%, var(--bg) 50%, var(--desktop-gradient-end) 100%);
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Matrix/Cyber grid overlay */
+.desktop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 51, 51, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 51, 51, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Terminal scan line effect */
+.desktop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 0, 0, 0.01) 2px,
+    rgba(255, 0, 0, 0.01) 4px
+  );
+  pointer-events: none;
+  animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
 }
 
 /* Theme transition */
@@ -238,11 +276,12 @@ html.theme-transition::view-transition-new(theme) {
   }
 }
 
-openclaw-app {
+lobster-app {
   display: block;
   position: relative;
   z-index: 1;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
 }
 
 a {
@@ -267,7 +306,7 @@ select {
   color: var(--text-strong);
 }
 
-/* Scrollbar styling */
+/* Scrollbar styling - Red accent */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -278,15 +317,15 @@ select {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: rgba(255, 42, 42, 0.3);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--border-strong);
+  background: rgba(255, 42, 42, 0.5);
 }
 
-/* Animations - Polished with spring feel */
+/* Animations */
 @keyframes rise {
   from {
     opacity: 0;
@@ -351,32 +390,40 @@ select {
 @keyframes glow-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 rgba(255, 92, 92, 0);
+    box-shadow: 0 0 0 rgba(255, 42, 42, 0);
   }
   50% {
     box-shadow: 0 0 20px var(--accent-glow);
   }
 }
 
-/* Stagger animation delays for grouped elements */
-.stagger-1 {
-  animation-delay: 0ms;
+
+
+@keyframes taskbar-slide {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
-.stagger-2 {
-  animation-delay: 50ms;
+
+@keyframes app-icon-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
-.stagger-3 {
-  animation-delay: 100ms;
-}
-.stagger-4 {
-  animation-delay: 150ms;
-}
-.stagger-5 {
-  animation-delay: 200ms;
-}
-.stagger-6 {
-  animation-delay: 250ms;
-}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 50ms; }
+.stagger-3 { animation-delay: 100ms; }
+.stagger-4 { animation-delay: 150ms; }
+.stagger-5 { animation-delay: 200ms; }
+.stagger-6 { animation-delay: 250ms; }
 
 /* Focus visible styles */
 :focus-visible {

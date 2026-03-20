@@ -3,3 +3,261 @@
 @import "./styles/layout.mobile.css";
 @import "./styles/components.css";
 @import "./styles/config.css";
+@import "./styles/linux-enhanced.css";
+@import "./styles/calendar-scheduler.css";
+@import "./styles/agent-profiles.css";
+@import "./styles/agent-dashboard.css";
+@import "./styles/utility-apps.css";
+@import "./styles/wallpaper.css";
+@import "./styles/dock-icons.css";
+
+/* ===========================================
+   Lobster OS - Additional Window Styles
+   =========================================== */
+
+/* Window content specific overrides */
+.window-content .content-header {
+  padding: 0 0 16px 0;
+}
+
+.window-content .page-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+.window-content .page-sub {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Adjust card styles within windows */
+.window-content .card {
+  background: rgba(17, 17, 17, 0.8);
+}
+
+/* Window-specific chat adjustments */
+.window-content .chat-container {
+  height: calc(100% - 60px);
+}
+
+/* Make tables and lists work in windows */
+.window-content .table-container {
+  max-height: calc(100% - 100px);
+  overflow: auto;
+}
+
+/* Status bar in windows */
+.window-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(255, 51, 51, 0.05);
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Window toolbar */
+.window-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 51, 51, 0.03);
+}
+
+.window-toolbar__btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.window-toolbar__btn:hover {
+  background: rgba(255, 51, 51, 0.1);
+  border-color: rgba(255, 51, 51, 0.3);
+}
+
+/* Window sidebar */
+.window-sidebar {
+  width: 200px;
+  border-right: 1px solid var(--border);
+  background: rgba(255, 51, 51, 0.02);
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.window-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--text);
+  font-size: 13px;
+  transition: all var(--duration-fast) ease;
+  margin-bottom: 2px;
+}
+
+.window-sidebar__item:hover {
+  background: rgba(255, 51, 51, 0.1);
+}
+
+.window-sidebar__item.active {
+  background: rgba(255, 51, 51, 0.15);
+  color: var(--accent);
+}
+
+.window-sidebar__item svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+/* Two-pane layout for windows */
+.window-two-pane {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  height: 100%;
+  gap: 0;
+}
+
+.window-two-pane__sidebar {
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.window-two-pane__content {
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* Window tabs */
+.window-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 51, 51, 0.02);
+}
+
+.window-tab {
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all var(--duration-fast) ease;
+}
+
+.window-tab:hover {
+  color: var(--text);
+}
+
+.window-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Make sure content fills window */
+.window-content > * {
+  height: 100%;
+}
+
+.window-content > .stack,
+.window-content > .grid {
+  height: auto;
+  min-height: 100%;
+}
+
+/* Scrollable areas within windows */
+.window-scroll-area {
+  overflow-y: auto;
+  max-height: calc(100% - 60px);
+}
+
+/* Window usage container special case */
+.window-usage-container {
+  height: 100%;
+  overflow: auto;
+}
+
+.window-usage-container .content-header {
+  display: none;
+}
+
+/* Welcome screen for empty desktop */
+.welcome-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text);
+  pointer-events: none;
+}
+
+.welcome-screen__logo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 24px;
+  opacity: 0.5;
+}
+
+.welcome-screen__title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--accent) 0%, #ff6666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.welcome-screen__subtitle {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Loading screen */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-desktop);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-screen__logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.loading-screen__text {
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}

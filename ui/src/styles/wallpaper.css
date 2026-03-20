@@ -1,0 +1,481 @@
+/* ===========================================
+   High-Tech Live Wallpaper Animation
+   =========================================== */
+
+.live-wallpaper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+/* Base gradient */
+.wallpaper-gradient {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(255, 51, 51, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(255, 51, 51, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(20, 20, 30, 1) 0%, rgba(10, 10, 10, 1) 100%);
+  animation: gradient-pulse 8s ease-in-out infinite;
+}
+
+@keyframes gradient-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+/* Cyber grid */
+.cyber-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    transform: perspective(500px) rotateX(60deg) translateY(0);
+  }
+  100% {
+    transform: perspective(500px) rotateX(60deg) translateY(60px);
+  }
+}
+
+/* Moving horizontal lines */
+.moving-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.moving-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 51, 51, 0.3) 20%, 
+    rgba(255, 51, 51, 0.5) 50%, 
+    rgba(255, 51, 51, 0.3) 80%, 
+    transparent 100%
+  );
+  animation: line-move 6s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes line-move {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Particle canvas */
+.particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Scan lines */
+.scan-lines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  pointer-events: none;
+  animation: scan-flicker 0.1s infinite;
+}
+
+@keyframes scan-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.98; }
+}
+
+/* Scan sweep */
+.scan-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(180deg, 
+    rgba(255, 51, 51, 0.6) 0%, 
+    rgba(255, 51, 51, 0.2) 50%, 
+    transparent 100%
+  );
+  box-shadow: 
+    0 0 20px rgba(255, 51, 51, 0.5),
+    0 0 40px rgba(255, 51, 51, 0.3),
+    0 0 60px rgba(255, 51, 51, 0.1);
+  animation: sweep 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sweep {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Corner accents */
+.corner-accent {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 2px solid rgba(255, 51, 51, 0.3);
+  animation: corner-pulse 3s ease-in-out infinite;
+}
+
+.corner-tl {
+  top: 20px;
+  left: 20px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 8px;
+}
+
+.corner-tr {
+  top: 20px;
+  right: 20px;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 8px;
+}
+
+.corner-bl {
+  bottom: 20px;
+  left: 20px;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+}
+
+.corner-br {
+  bottom: 20px;
+  right: 20px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 8px;
+}
+
+@keyframes corner-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 20px rgba(255, 51, 51, 0.4);
+  }
+}
+
+/* Hex pattern */
+.hex-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  animation: hex-float 15s ease-in-out infinite;
+}
+
+@keyframes hex-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.01);
+  }
+}
+
+/* Glowing orbs */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  animation: orb-float 10s ease-in-out infinite;
+}
+
+.glow-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 51, 51, 0.4) 0%, transparent 70%);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.glow-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 100, 100, 0.3) 0%, transparent 70%);
+  top: 60%;
+  right: 15%;
+  animation-delay: -3s;
+}
+
+.glow-orb-3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(200, 50, 50, 0.35) 0%, transparent 70%);
+  bottom: 20%;
+  left: 40%;
+  animation-delay: -6s;
+}
+
+@keyframes orb-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+    opacity: 0.35;
+  }
+  75% {
+    transform: translate(20px, 10px) scale(1.05);
+    opacity: 0.45;
+  }
+}
+
+/* Data streams */
+.data-streams {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.data-stream {
+  position: absolute;
+  top: -100px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 12px;
+  color: rgba(255, 51, 51, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: stream-fall 8s linear infinite;
+  text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+}
+
+.data-bit {
+  opacity: 0.6;
+  animation: bit-flicker 0.5s ease-in-out infinite alternate;
+}
+
+.data-bit:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+.data-bit:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@keyframes stream-fall {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(calc(100vh + 200px));
+    opacity: 0;
+  }
+}
+
+@keyframes bit-flicker {
+  0% {
+    opacity: 0.3;
+    color: rgba(255, 51, 51, 0.4);
+  }
+  100% {
+    opacity: 0.9;
+    color: rgba(255, 100, 100, 0.7);
+  }
+}
+
+/* Radial overlay */
+.radial-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(10, 10, 10, 0.3) 70%,
+    rgba(10, 10, 10, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+/* Center Logo - High Tech Lobster */
+.center-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.center-logo__svg {
+  width: 100%;
+  height: 100%;
+  animation: logo-float 6s ease-in-out infinite;
+}
+
+@keyframes logo-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+.center-logo__svg .rotating-ring {
+  animation: ring-rotate 20s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes ring-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.center-logo__glow {
+  position: absolute;
+  inset: -50px;
+  background: radial-gradient(circle,
+    rgba(255, 51, 51, 0.15) 0%,
+    rgba(255, 51, 51, 0.05) 40%,
+    transparent 70%
+  );
+  animation: glow-pulse 4s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Tech decoration lines */
+.live-wallpaper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 51, 51, 0.1) 20%,
+    rgba(255, 51, 51, 0.2) 50%,
+    rgba(255, 51, 51, 0.1) 80%,
+    transparent 100%
+  );
+  animation: horizon-pulse 4s ease-in-out infinite;
+}
+
+@keyframes horizon-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(2);
+  }
+}
+
+.live-wallpaper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(255, 51, 51, 0.1) 30%,
+    rgba(255, 51, 51, 0.2) 50%,
+    rgba(255, 51, 51, 0.1) 70%,
+    transparent 100%
+  );
+  animation: vertical-pulse 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes vertical-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
