@@ -10,24 +10,21 @@
   transform: translateY(-50%);
   height: auto;
   max-height: calc(100vh - 100px);
-  width: var(--dock-width, 76px);
-  background: linear-gradient(180deg, 
-    rgba(15, 15, 15, 0.98) 0%,
-    rgba(10, 10, 10, 0.99) 100%);
-  border: 1px solid rgba(255, 51, 51, 0.2);
+  width: var(--dock-width, 72px);
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: none;
-  border-radius: 0 18px 18px 0;
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border-radius: 0 16px 16px 0;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding: 16px 0;
   z-index: 100;
   box-shadow: 
-    4px 0 30px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(255, 51, 51, 0.1),
-    inset -1px 0 0 rgba(255, 255, 255, 0.05);
+    4px 0 20px rgba(0, 0, 0, 0.4),
+    inset -1px 0 0 rgba(255, 255, 255, 0.03);
 }
 
 .linux-dock__favorites {
@@ -57,102 +54,69 @@
 }
 
 .linux-dock__separator {
-  width: 36px;
+  width: 32px;
   height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(255, 51, 51, 0.3) 50%, 
-    transparent 100%);
-  margin: 12px 0;
-  position: relative;
-}
-
-.linux-dock__separator::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 4px;
-  height: 4px;
-  background: rgba(255, 51, 51, 0.5);
-  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
 }
 
 .linux-dock__item {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   position: relative;
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  background: linear-gradient(145deg, 
-    rgba(40, 40, 40, 0.9) 0%, 
-    rgba(25, 25, 25, 0.95) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transform-origin: center;
 }
 
 .linux-dock__item::before {
   content: '';
   position: absolute;
-  left: -10px;
+  left: -8px;
   width: 3px;
   height: 0;
-  background: linear-gradient(180deg,
-    var(--accent) 0%,
-    rgba(255, 100, 100, 0.8) 100%);
-  border-radius: 0 3px 3px 0;
-  transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 8px rgba(255, 51, 51, 0.5);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 0 2px 2px 0;
+  transition: height 0.2s ease;
 }
 
 /* macOS-style magnification */
 .linux-dock__favorites:has(.linux-dock__item:hover) .linux-dock__item {
-  transform: scale(0.9);
+  transform: scale(0.92);
 }
 
 .linux-dock__favorites .linux-dock__item:hover {
-  transform: scale(1.35) translateX(5px);
+  transform: scale(1.25) translateX(4px);
   z-index: 10;
-  background: linear-gradient(145deg, 
-    rgba(255, 51, 51, 0.2) 0%, 
-    rgba(180, 30, 30, 0.3) 100%);
-  border-color: rgba(255, 51, 51, 0.4);
-  box-shadow: 
-    0 12px 40px rgba(255, 51, 51, 0.35),
-    0 0 60px rgba(255, 51, 51, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .linux-dock__favorites .linux-dock__item:hover::before {
-  height: 60%;
+  height: 50%;
 }
 
 /* Adjacent items get medium scale */
 .linux-dock__favorites .linux-dock__item:has(+ .linux-dock__item:hover),
 .linux-dock__favorites .linux-dock__item:hover + .linux-dock__item {
-  transform: scale(1.15) translateX(3px);
+  transform: scale(1.1) translateX(2px);
 }
 
 .linux-dock__item.active {
-  background: linear-gradient(145deg, 
-    rgba(255, 51, 51, 0.25) 0%, 
-    rgba(180, 30, 30, 0.35) 100%);
-  border-color: rgba(255, 51, 51, 0.5);
-  box-shadow: 
-    0 0 20px rgba(255, 51, 51, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .linux-dock__item.active::before {
-  height: 70%;
+  height: 60%;
 }
 
 /* Desktop indicator on dock items */
@@ -167,9 +131,9 @@
 }
 
 .linux-dock__item svg {
-  width: 26px;
-  height: 26px;
-  stroke: #e8e8e8;
+  width: 24px;
+  height: 24px;
+  stroke: rgba(255, 255, 255, 0.8);
   fill: none;
   stroke-width: 1.5;
   transition: all 0.2s ease;
@@ -177,23 +141,15 @@
 
 .linux-dock__item:hover svg {
   stroke: #ffffff;
-  filter: drop-shadow(0 0 4px rgba(255, 51, 51, 0.5));
 }
 
 .linux-dock__item.launcher-btn {
-  background: linear-gradient(145deg,
-    rgba(255, 51, 51, 0.2) 0%,
-    rgba(200, 30, 30, 0.3) 100%);
-  border-color: rgba(255, 51, 51, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .linux-dock__item.launcher-btn:hover {
-  background: linear-gradient(145deg,
-    rgba(255, 51, 51, 0.35) 0%,
-    rgba(220, 40, 40, 0.45) 100%);
-  box-shadow: 
-    0 8px 28px rgba(255, 51, 51, 0.35),
-    0 0 20px rgba(255, 51, 51, 0.2);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 /* Desktop Icons - Enhanced - Right Side */
@@ -208,7 +164,7 @@
   position: absolute;
   right: 0;
   top: calc(var(--panel-height, 40px));
-  bottom: 0;
+  bottom: 16px;
   width: 100px;
   overflow-x: hidden;
   overflow-y: auto;
