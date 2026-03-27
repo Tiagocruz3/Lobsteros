@@ -47,7 +47,7 @@ import { renderAgentDashboard } from "./views/agent-dashboard.ts";
 import { renderWallpaper, startWallpaperAnimation } from "./wallpaper-animation.ts";
 
 // ===========================================
-// Lobster OS - Desktop OS State Management
+// Code Flux - Desktop OS State Management
 // ===========================================
 
 type WindowState = {
@@ -503,7 +503,7 @@ function renderWindowContent(state: AppViewState, win: WindowState) {
   // This mirrors the original render logic but for a specific tab
   const tab = win.tab;
   
-  const lobsterVersion =
+  const codeFluxVersion =
     (typeof state.hello?.server?.version === "string" && state.hello.server.version.trim()) ||
     state.updateAvailable?.currentVersion ||
     t("common.na");
@@ -1232,7 +1232,7 @@ export function renderApp(state: AppViewState) {
     (state as unknown as { requestUpdate: () => void }).requestUpdate();
   };
   
-  const lobsterVersion =
+  const codeFluxVersion =
     (typeof state.hello?.server?.version === "string" && state.hello.server.version.trim()) ||
     state.updateAvailable?.currentVersion ||
     t("common.na");
@@ -1735,7 +1735,7 @@ function renderStartMenu() {
             </svg>
           </div>
           <div class="app-launcher__brand-text">
-            <h3>Lobster OS</h3>
+            <h3>Code Flux</h3>
             <span>v2.0.0</span>
           </div>
         </div>
@@ -1893,17 +1893,17 @@ function renderTerminal() {
     <div class="utility-app terminal">
       <div class="terminal__output">
         <div class="terminal__line">
-          <span class="terminal__prompt">user@lobster-os:~$</span>
+          <span class="terminal__prompt">user@codeflux:~$</span>
           <span class="terminal__cmd">welcome</span>
         </div>
         <div class="terminal__line terminal__output-text">
-          🦞 Welcome to Lobster OS Terminal v2.0.0
+          🚀 Welcome to Code Flux Terminal v2.0.0
         </div>
         <div class="terminal__line terminal__output-text">
           Type 'help' for available commands.
         </div>
         <div class="terminal__line">
-          <span class="terminal__prompt">user@lobster-os:~$</span>
+          <span class="terminal__prompt">user@codeflux:~$</span>
           <span class="terminal__cursor">_</span>
         </div>
       </div>
@@ -1920,7 +1920,7 @@ function renderBrowser() {
           <button>→</button>
           <button>↻</button>
         </div>
-        <input class="browser__url" value="https://lobster.ai" readonly />
+        <input class="browser__url" value="https://codeflux.ai" readonly />
       </div>
       <div class="browser__content">
         <div class="browser__placeholder">
@@ -2069,7 +2069,7 @@ function renderSystemMonitor() {
       </div>
       <div class="monitor__processes">
         <h4>Processes</h4>
-        ${["lobster-daemon", "gateway-server", "agent-runner"].map(proc => html`
+        ${["codeflux-daemon", "gateway-server", "agent-runner"].map(proc => html`
           <div class="monitor__process">
             <span>${proc}</span>
             <span>Running</span>

@@ -137,7 +137,7 @@ export function renderWallpaper() {
       <!-- Radial gradient overlay -->
       <div class="radial-overlay"></div>
       
-      <!-- Centered High-Tech Lobster Logo -->
+      <!-- Centered High-Tech Code Flux Logo -->
       <div class="center-logo">
         <svg viewBox="0 0 200 200" class="center-logo__svg">
           <defs>
@@ -171,14 +171,14 @@ export function renderWallpaper() {
           <path d="M100 5 L100 15 M100 185 L100 195 M5 100 L15 100 M185 100 L195 100" 
                 stroke="rgba(255, 51, 51, 0.4)" stroke-width="2"/>
           
-          <!-- Lobster body -->
+          <!-- Logo body -->
           <ellipse cx="100" cy="100" rx="35" ry="50" fill="url(#logoGradient)" opacity="0.9" filter="url(#logoGlow)"/>
           
-          <!-- Lobster claws -->
+          <!-- Logo claws -->
           <ellipse cx="55" cy="75" rx="20" ry="28" fill="url(#logoGradient)" opacity="0.85" transform="rotate(-30 55 75)" filter="url(#logoGlow)"/>
           <ellipse cx="145" cy="75" rx="20" ry="28" fill="url(#logoGradient)" opacity="0.85" transform="rotate(30 145 75)" filter="url(#logoGlow)"/>
           
-          <!-- Lobster tail segments -->
+          <!-- Logo tail segments -->
           <ellipse cx="100" cy="145" rx="25" ry="15" fill="url(#logoGradient)" opacity="0.8" filter="url(#logoGlow)"/>
           <ellipse cx="100" cy="165" rx="20" ry="12" fill="url(#logoGradient)" opacity="0.7" filter="url(#logoGlow)"/>
           <ellipse cx="100" cy="180" rx="15" ry="8" fill="url(#logoGradient)" opacity="0.6" filter="url(#logoGlow)"/>
@@ -201,8 +201,8 @@ export function renderWallpaper() {
             <circle cx="100" cy="100" r="75" fill="none" stroke="rgba(255, 51, 51, 0.15)" stroke-width="1" stroke-dasharray="20 40"/>
           </g>
           
-          <!-- Lobster text -->
-          <text x="100" y="115" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" letter-spacing="2" opacity="0.9">LOBSTER</text>
+          <!-- Logo text -->
+          <text x="100" y="115" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold" letter-spacing="1.5" opacity="0.9">CODE FLUX</text>
         </svg>
         <div class="center-logo__glow"></div>
       </div>
