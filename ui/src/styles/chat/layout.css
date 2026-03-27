@@ -329,11 +329,20 @@
   justify-content: flex-start;
   gap: 12px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 100;
 }
 
 .chat-controls__session {
   min-width: 140px;
   max-width: 300px;
+  position: relative;
+  z-index: 101;
+}
+
+.chat-controls__session select {
+  position: relative;
+  z-index: 102;
 }
 
 .chat-controls__thinking {
